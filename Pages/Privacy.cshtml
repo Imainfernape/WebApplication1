@@ -1,0 +1,27 @@
+﻿@page
+@model WebApplication1.Pages.PrivacyModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="container mt-5">
+    <h2>Profile</h2>
+    <p>This page displays your profile details.</p>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>User Profile</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>First Name:</strong> @Model.FirstName</p>
+            <p><strong>Last Name:</strong> @Model.LastName</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Gender:</strong> @Model.Gender</p>
+            <p><strong>Date of Birth:</strong> @Model.DateOfBirth</p>
+            <p><strong>Encrypted NRIC:</strong> @Model.EncryptedNRIC</p>
+            <p><strong>Decrypted NRIC:</strong> @Model.DecryptedNRIC</p>
+            <p><strong>Who Am I:</strong> @Model.WhoAmI</p>
+        </div>
+    </div>
+    <a asp-page="/Account/ChangePassword" class="btn btn-warning">Change Password</a>
+</div>

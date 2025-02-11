@@ -1,0 +1,28 @@
+﻿@page
+@model WebApplication1.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, @User.Identity.Name</h1>
+    <p>Welcome to Ace Job Agency.</p>
+
+    @if (!string.IsNullOrEmpty(Model.EncryptedNRIC))
+    {
+        <p>Your Encrypted NRIC: <strong>@Model.EncryptedNRIC</strong></p>
+    }
+    else
+    {
+        <p>No NRIC data found.</p>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.DecryptedNRIC))
+    {
+        <p>Your Decrypted NRIC: <strong>@Model.DecryptedNRIC</strong></p>
+    }
+    else
+    {
+        <p>No NRIC data found.</p>
+    }
+</div>

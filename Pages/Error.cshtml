@@ -1,0 +1,17 @@
+﻿@page "{code:int?}"
+@model WebApplication1.Pages.ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="text-danger">@Model.EStatusCode - Error</h1>
+    <h3 class="text-muted">@Model.ErrorMessage</h3>
+
+    @if (Model.ShowRequestId)
+    {
+        <p class="text-muted"><strong>Request ID:</strong> <code>@Model.RequestId</code></p>
+    }
+
+    <a href="/" class="btn btn-primary mt-3">Return to Homepage</a>
+</div>
